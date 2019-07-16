@@ -1,14 +1,18 @@
 import React from "react";
 import logo from "./logo.png";
 import "./style.css";
+import { NavLink } from "react-router-dom";
+import { useAuth0 } from "../../react-auth0-wrapper";
 
-function NavBar() {
+const NavBar = () => {
+  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+
   return (
     <header className="navbar-list">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="/">
+        <NavLink to="/" className="navbar-brand">
           <img id="logo" src={logo} alt={logo} />
-        </a>
+        </NavLink>
         <button
           class="navbar-toggler"
           type="button"
@@ -24,25 +28,43 @@ function NavBar() {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/">
+              <NavLink to="/" className="nav-link">
                 Home <span class="sr-only">(current)</span>
-              </a>
+              </NavLink>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <NavLink class="nav-link" href="#">
                 Resources
-              </a>
+              </NavLink>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/profile">
-                Profile
-              </a>
-            </li>
+            {isAuthenticated && (
+              <li class="nav-item">
+                <NavLink to="/profile" className="nav-link">
+                  Profile
+                </NavLink>
+              </li>
+            )}
           </ul>
+        </div>
+        <div className="auth0-buttons">
+          {!isAuthenticated && (
+            <button
+              onClick={() => loginWithRedirect({})}
+              className="btn btn-dark btn-md"
+            >
+              Log in
+            </button>
+          )}
+
+          {isAuthenticated && (
+            <button onClick={() => logout()} className="btn btn-dark btn-md">
+              Log out
+            </button>
+          )}
         </div>
       </nav>
     </header>
   );
-}
+};
 
 export default NavBar;

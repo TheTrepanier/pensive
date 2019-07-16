@@ -1,21 +1,23 @@
 import React, { Component } from "react";
-import NavBar from "../../components/NavBar/NavBar";
-import Footer from "../../components/Footer/Footer";
 import "./style.css";
+import { useAuth0 } from '../../react-auth0-wrapper'
 
-class User extends Component {
-  render() {
+const User = () => {
+  
+    const { loading, user } = useAuth0();
+
+    
+
     return (
       <div>
-        <NavBar />
         <div className="row profile">
           <div className="col-md-2">
             <div className="profile-sidebar">
               <div className="profile-userpic">
-                <img src="" className="img-responsive" alt="" />
+                <img src={user.picture} className="img-responsive" alt="" />
               </div>
               <div className="profile-usertitle">
-                <div className="profile-usertitle-name">Aaron Gonzalez</div>
+                <div className="profile-usertitle-name">{user.name}</div>
                 <div className="profile-usertitle-job">Developer</div>
               </div>
               <div className="profile-userbuttons">
@@ -67,10 +69,9 @@ class User extends Component {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
-}
+
 
 export default User;

@@ -13,3 +13,10 @@
   list-style: none;
   white-space: nowrap;
 }
+
+.auth0-buttons {
+  float: right;
+}
+.btn {
+  background-color: #6c27f4;
+}

@@ -13,15 +13,7 @@ const ArticleSchema = new Schema({
   },
   link: {
     type: String,
-    validate: {
-      validator: function (check, cb) {
-        Article.findOne({link: check}, function (err, article) {
-          if (err) throw err;
-          if (article) return cb(false);
-          cb(true);
-        });
-      }
-    },
+    unique:true,
     required: true
   },
   author: {

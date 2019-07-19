@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import "./style.css";
-import { useAuth0 } from '../../react-auth0-wrapper'
+import { useAuth0 } from "../../react-auth0-wrapper";
+import { Link } from "react-router-dom";
 
 const User = () => {
-  
-    const { loading, user } = useAuth0();
+  const { loading, user } = useAuth0();
 
-    
-
-    return (
-      <div>
+  return (
+    <div>
+      <div className="container mt-5">
         <div className="row profile">
-          <div className="col-md-2">
+          <div className="col-md-3">
             <div className="profile-sidebar">
-              <div className="profile-userpic">
+              <div className="profile-userpic text-center">
                 <img src={user.picture} className="img-responsive" alt="" />
               </div>
               <div className="profile-usertitle">
@@ -31,47 +30,52 @@ const User = () => {
               <div className="profile-usermenu">
                 <ul className="profile-nav">
                   <li className="profile-list">
-                    <a href="#">
+                    <Link to="/profile" className="nav-link">
                       <i className="fa fa-home" />
                       Overview{" "}
-                    </a>
+                    </Link>
                   </li>
                   <li className="profile-list">
-                    <a href="#">
-                      <i className="fa fa-user" />
-                      Account Settings{" "}
-                    </a>
+                    <Link to="/" className="nav-link">
+                      <i className="fa fa-pencil" />
+                      Create A Post{" "}
+                    </Link>
                   </li>
                   <li className="profile-list">
-                    <a href="#" target="_blank">
+                    <Link to="/" className="nav-link">
+                      <i className="fa fa-book" />
+                      Resources{" "}
+                    </Link>
+                  </li>
+                  <li className="profile-list">
+                    <Link to="/" className="nav-link">
                       <i className="fa fa-check" />
-                      Tasks{" "}
-                    </a>
-                  </li>
-                  <li className="profile-list">
-                    <a href="#">
-                      <i className="fa fa-flag" />
-                      Help{" "}
-                    </a>
+                      Create New Task{" "}
+                    </Link>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div className="col-md-7">
+          <div className="col-md-9">
             <div className="profile-content">
-              Some user related content goes here...
-            </div>
-          </div>
-          <div className="col-md-3">
-            <div className="profile-content">
-              Some user related content goes here...
+              <form>
+                Post Title
+                <input type="text" name="title" />
+                Blog Post
+                <textarea
+                  id="subject"
+                  name="subject"
+                  placeholder="Write something.."
+                />
+                <input type="submit" value="Submit" />
+              </form>
             </div>
           </div>
         </div>
       </div>
-    );
-  }
-
+    </div>
+  );
+};
 
 export default User;

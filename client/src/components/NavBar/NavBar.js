@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useAuth0 } from "../../react-auth0-wrapper";
 
 const NavBar = () => {
-  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   return (
     <header className="navbar-list">
@@ -33,7 +33,7 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li class="nav-item">
-              <NavLink class="nav-link" href="#">
+              <NavLink to="/resources" className="nav-link">
                 Resources
               </NavLink>
             </li>

@@ -1,39 +1,29 @@
 const mongoose = require("mongoose");
-const uniqueMongoose = require("mongoose-unique-validator");
+
 
 // Save a reference to the Schema constructor
 const Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
-const ArticleSchema = new Schema({
-  title: {
+const PostSchema = new Schema({
+  postTitle: {
     type: String,
     required: true
   },
-  link: {
+  postBody: {
     type: String,
-    unique:true,
-    required: true
+    required: true,
+    maxlength: 3
   },
   author: {
       type: String,
       required: true
-  },
-  teaser: {
-    type: String,
-    required: true
-  },
-  category: {
-    type: String,
-    required: true
   }
 });
 
-ArticleSchema.plugin(uniqueMongoose);
-
 // This creates our model from the above schema, using mongoose's model method
-let Article = mongoose.model("Article", ArticleSchema);
+let Post = mongoose.model("Post", PostSchema);
 
 // Export the Article model
-module.exports = Article;
+module.exports = Post;

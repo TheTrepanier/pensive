@@ -8,7 +8,7 @@ class Card extends Component {
         <div className="row">
           <div className="col-lg-6">
             <div className="card">
-              <img className="card-img-top" src="..." alt="Card image cap" />
+              <img className="card-img-top" src="..." alt="Card cap" />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
                 <p className="card-text">
@@ -20,7 +20,7 @@ class Card extends Component {
           </div>
           <div className="col-lg-6">
             <div className="card">
-              <img className="card-img-top" src="..." alt="Card image cap" />
+              <img className="card-img-top" src="..." alt="Card cap" />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
                 <p className="card-text">
@@ -34,7 +34,7 @@ class Card extends Component {
         <div className="row">
           <div className="col-lg-6">
             <div className="card">
-              <img className="card-img-top" src="..." alt="Card image cap" />
+              <img className="card-img-top" src="..." alt="Card cap" />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
                 <p className="card-text">
@@ -46,7 +46,7 @@ class Card extends Component {
           </div>
           <div className="col-lg-6">
             <div className="card">
-              <img className="card-img-top" src="..." alt="Card image cap" />
+              <img className="card-img-top" src="..." alt="Card cap" />
               <div className="card-body">
                 <h5 className="card-title">Card title</h5>
                 <p className="card-text">

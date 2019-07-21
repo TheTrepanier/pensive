@@ -20,6 +20,9 @@ const UserSchema = new Schema({
   },
   userImage: {
       type: String
+  },
+  userRole: {
+    type: String
   }
 });
 

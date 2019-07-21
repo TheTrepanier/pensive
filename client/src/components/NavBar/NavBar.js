@@ -9,12 +9,12 @@ const NavBar = () => {
 
   return (
     <header className="navbar-list">
-      <nav class="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-expand-lg navbar-light">
         <NavLink to="/" className="navbar-brand">
           <img id="logo" src={logo} alt={logo} />
         </NavLink>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -22,23 +22,23 @@ const NavBar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon" />
+          <span className="navbar-toggler-icon" />
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
               <NavLink to="/" className="nav-link">
-                Home <span class="sr-only">(current)</span>
+                Home <span className="sr-only">(current)</span>
               </NavLink>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink to="/resources" className="nav-link">
                 Resources
               </NavLink>
             </li>
             {isAuthenticated && (
-              <li class="nav-item">
+              <li className="nav-item">
                 <NavLink to="/profile" className="nav-link">
                   Profile
                 </NavLink>

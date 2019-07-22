@@ -2,7 +2,6 @@ const cheerio = require("cheerio");
 const axios = require("axios");
 const topics = require("./scraperTopics");
 const db = require("./models");
-let results = [];
 
 let resourcesDB = {
     updateResources: () => {
@@ -17,6 +16,9 @@ let resourcesDB = {
 
                     $("div.media").each((i, element) => {
                         let article = {};
+                        // let imgDiv = $(element).children("div.blog_entry__teaser_image");
+                        // let imgSubDiv = $(imgDiv).children("div.field-name-field-blog-entry-images");
+                        article.img = $(element).children("div").children("div").children("img").attr("src");
                         let textCol = $(element).children("div.blog_entry__text");
                         article.title = $(textCol).children("h2").text();
                         article.link = "https://www.psychologytoday.com" + $(textCol).children("h2").children("a").attr("href");
@@ -26,13 +28,14 @@ let resourcesDB = {
                         article.category = fileUnder;
                         
                         // console.log(article.title);
+                        // console.log(article.img);
                         
                         db.Article.create(article)
                             .then((articleAdded) => {
-                                console.log(articleAdded);
+                                return articleAdded;
                             })
                             .catch((err) => {
-                                console.error(err);
+                                return err;
                             });
                     });
                 });

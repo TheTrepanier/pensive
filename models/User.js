@@ -6,38 +6,30 @@ const Schema = mongoose.Schema;
 
 // Using the Schema constructor, create a new UserSchema object
 // This is similar to a Sequelize model
-const ArticleSchema = new Schema({
-  title: {
+const UserSchema = new Schema({
+  name: {
     type: String,
     required: true
   },
-  link: {
-    type: String,
-    unique:true,
-    required: true
+  givenName: {
+      type: String
   },
-  author: {
+  auth0ID: {
       type: String,
-      required: true
+      unique: true
   },
-  teaser: {
-    type: String,
-    required: true
+  userImage: {
+      type: String
   },
-  img: {
-    type: String,
-    required: true
-  },
-  category: {
-    type: String,
-    required: true
+  userRole: {
+    type: String
   }
 });
 
-ArticleSchema.plugin(uniqueMongoose);
+UserSchema.plugin(uniqueMongoose);
 
 // This creates our model from the above schema, using mongoose's model method
-let Article = mongoose.model("Article", ArticleSchema);
+let User = mongoose.model("User", UserSchema);
 
 // Export the Article model
-module.exports = Article;
+module.exports = User;

@@ -6,3 +6,5 @@ router.route("/")
 
 router.route("/:auth0ID")
     .get(userController.findUUID);
+
+module.exports = router;

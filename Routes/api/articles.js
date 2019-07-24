@@ -9,3 +9,5 @@ router.route("/:category")
 
 router.route("/:id")
     .delete(articlesController.removeArticle);
+
+module.exports = router;

@@ -1,26 +1,33 @@
 import React, { Component } from "react";
 import Card from "../../components/Card/Card";
+import Wrapper from "../../components/Wrapper/index";
 import { Col, Row, Container } from "../../components/Grid/index";
-import "./Resources.css";
+import { Link } from "react-router-dom";
+import topics from "./topics.json";
+import "./style.css";
 
 class Resources extends Component {
+  state = {
+    topics
+  };
   render() {
     return (
       <div>
         <div className="jumbotron-resources">
           <h1 className="resources">Resources</h1>
         </div>
-        <div className="container">
-          <Row>
-            <Col size="md-6">
-              <Card />
-              <Card />
-            </Col>
-            <Col size="md-6">
-              <Card />
-              <Card />
-            </Col>
-          </Row>
+        <div className="container text-center">
+          <Wrapper>
+            {this.state.topics.map(topics => (
+              <Link to="/topics">
+                <Card
+                  id={topics.id}
+                  topic={topics.topic}
+                  image={topics.image}
+                />
+              </Link>
+            ))}
+          </Wrapper>
         </div>
       </div>
     );

@@ -17,7 +17,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/resources" component={Resources} />
-            <Route exact path="/topics" component={Topics} />
+            <Route exact path="/resources/:topic" component={Topics}/>
+            {/* <Route exact path="/topics" component={Topics} /> */}
             <PrivateRoute exact path="/profile" component={User} />
           </Switch>
           <Footer />

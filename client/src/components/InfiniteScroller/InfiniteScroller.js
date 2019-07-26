@@ -1,13 +1,12 @@
-import React, {Component, Fragment} from "react";
-import {render} from "react-dom";
+import React, { Component, Fragment } from "react";
 import request from "superagent";
 import debounce from "lodash.debounce";
-import Card from "../Card/Card";
+import ArticleCard from "../ArticleCard/ArticleCard";
 
 class InfiniteScroller extends Component {
     constructor(props) {
         super(props);
-        
+
         // Setting initial state
         this.state = {
             error: false,
@@ -47,15 +46,16 @@ class InfiniteScroller extends Component {
     loadCards = () => {
         this.setState({ isLoading: true }, () => {
             request
-                .get("/api/articles")
+                .get("/api/articles/" + this.props.link)
                 .then(results => {
-                    const nextArticles = results.map(cards => ({
+                    const nextArticles = results.body.map(cards => ({
                         id: cards._id,
                         image: cards.img,
                         title: cards.title,
                         link: cards.link,
                         author: cards.author,
                         teaser: cards.teaser,
+                        topic: cards.category,
                     }));
 
                     this.setState({
@@ -82,10 +82,30 @@ class InfiniteScroller extends Component {
             hasMore,
             isLoading,
             cards,
-        } = this.setState;
+        } = this.state;
 
-        return(
-            <Card />
-        )
+        return (
+            <div>
+                {cards.map(card =>
+                    <Fragment key={card.id}>
+                        <ArticleCard image={card.image} title={card.title} teaser={card.teaser} link={card.link} />
+                    </Fragment>
+                )}
+                {/* <hr /> */}
+                {error &&
+                    <div style={{ color: "#900" }}>
+                        {error}
+                    </div>
+                }
+                {isLoading &&
+                    <div>Loading...</div>
+                }
+                {!hasMore &&
+                    <div>No more results</div>
+                }
+            </div>
+        );
     }
 }
+
+export default InfiniteScroller;

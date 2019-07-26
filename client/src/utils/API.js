@@ -7,5 +7,8 @@ export default {
     },
     makePost: function (postData) {
         return axios.post("/api/posts", postData);
+    },
+    getArticlesByCategory: function (topic) {
+        return axios.get("/api/articles/" + topic);
     }
 };

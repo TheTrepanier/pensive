@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Card from "../../components/Card/Card";
 import Wrapper from "../../components/Wrapper/index";
-import { Col, Row, Container } from "../../components/Grid/index";
+// import { Col, Row, Container } from "../../components/Grid/index";
 import { Link } from "react-router-dom";
 import topics from "./topics.json";
 import "./style.css";
@@ -19,7 +19,7 @@ class Resources extends Component {
         <div className="container text-center">
           <Wrapper>
             {this.state.topics.map(topics => (
-              <Link to="/topics">
+              <Link to={topics.toLink}>
                 <Card
                   id={topics.id}
                   topic={topics.topic}

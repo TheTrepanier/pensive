@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import User from "./pages/Users/Users";
 import Resources from "./pages/Resources/Resources";
+import Topics from "./pages/Topics/Topics";
 import PrivateRoute from "./components/Auth/PrivateRoute";
 
 class App extends Component {
@@ -15,7 +16,8 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/resources" component={Resources}/>
+            <Route exact path="/resources" component={Resources} />
+            <Route exact path="/topics" component={Topics} />
             <PrivateRoute exact path="/profile" component={User} />
           </Switch>
           <Footer />

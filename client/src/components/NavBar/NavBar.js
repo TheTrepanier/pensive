@@ -6,7 +6,6 @@ import { useAuth0 } from "../../react-auth0-wrapper";
 
 const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
-
   return (
     <header className="navbar-list">
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -17,17 +16,23 @@ const NavBar = () => {
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon" />
         </button>
 
+<<<<<<< Updated upstream
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
+=======
+        <div className="navbar-collapse collapse" id="navbarNav">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+>>>>>>> Stashed changes
               <NavLink to="/" className="nav-link">
                 Home <span className="sr-only">(current)</span>
               </NavLink>

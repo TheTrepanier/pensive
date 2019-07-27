@@ -2,10 +2,9 @@ import React from "react";
 import logo from "./logo.png";
 import "./style.css";
 import { NavLink } from "react-router-dom";
-import { useAuth0 } from "../../react-auth0-wrapper";
 
 const NavBar = () => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  
   return (
     <header className="navbar-list">
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -24,15 +23,9 @@ const NavBar = () => {
           <span className="navbar-toggler-icon" />
         </button>
 
-<<<<<<< Updated upstream
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-=======
         <div className="navbar-collapse collapse" id="navbarNav">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
->>>>>>> Stashed changes
               <NavLink to="/" className="nav-link">
                 Home <span className="sr-only">(current)</span>
               </NavLink>
@@ -42,7 +35,9 @@ const NavBar = () => {
                 Resources
               </NavLink>
             </li>
-            {isAuthenticated && (
+            </ul>
+            </div>
+            {/* {isAuthenticated && (
               <li className="nav-item">
                 <NavLink to="/profile" className="nav-link">
                   Profile
@@ -66,7 +61,7 @@ const NavBar = () => {
               Log out
             </button>
           )}
-        </div>
+        </div> */}
       </nav>
     </header>
   );

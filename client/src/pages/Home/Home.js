@@ -23,7 +23,6 @@ class Home extends Component {
               <br />
               <button
                 className="btn btn-dark btn-lg"
-                href="#"
                 id="start-journey"
                 role="button"
                 onClick={this.props.auth.login}

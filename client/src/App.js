@@ -32,7 +32,7 @@ class App extends Component {
             render={props => <Callback auth={this.auth} {...props} />}
           />
           <Route exact path="/resources" component={Resources} />
-          <Route exact path="/topics" component={Topics} />
+          <Route exact path="/resources/:topic" component={Topics} />
           <PrivateRoute exact path="/profile" component={User} />
         </Switch>
         <Footer />

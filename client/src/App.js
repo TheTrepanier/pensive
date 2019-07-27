@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navbar />
+        <Navbar auth={this.auth}/>
         <Switch>
           <Route
             exact

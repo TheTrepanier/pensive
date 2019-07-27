@@ -24,6 +24,10 @@ const PostSchema = new Schema({
     type: Boolean,
     required: true,
     default: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
   }
 });
 

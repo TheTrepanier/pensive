@@ -42,22 +42,11 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <div className="auth0-buttons">
-          {!isAuthenticated && (
             <button
-              onClick={() => loginWithRedirect({})}
               className="btn btn-dark btn-md"
             >
               Log in
             </button>
-          )}
-
-          {isAuthenticated && (
-            <button onClick={() => logout()} className="btn btn-dark btn-md">
-              Log out
-            </button>
-          )}
-        </div> */}
       </nav>
     </header>
   );

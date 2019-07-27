@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { useAuth0 } from "../../react-auth0-wrapper";
+// import { useAuth0 } from "../../react-auth0-wrapper";
 import "./style.css";
 
 const ProfileSideBar = () => {
-  const { loading, user } = useAuth0();
+  // const { user } = useAuth0();
   return (
     <div>
       <div className="profile-sidebar">

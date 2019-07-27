@@ -10,7 +10,6 @@ import Topics from "./pages/Topics/Topics";
 import PrivateRoute from "./components/Auth/PrivateRoute";
 import Auth from "./Auth/Auth";
 
-console.log(process.env.REACT_APP_AUTH0_DOMAIN)
 
 class App extends Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Card from "../../components/Card/Card";
+import Card from "../../components/TopicsCard/TopicsCard";
 import Wrapper from "../../components/Wrapper/index";
 // import { Col, Row, Container } from "../../components/Grid/index";
 import { Link } from "react-router-dom";

@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <>
         <div className="App">
-          <Navbar />
+          <Navbar  auth={this.auth}/>
           <Switch>
             <Route
               exact

@@ -4,7 +4,7 @@ import "./style.css";
 function ArticleCard(props) {
   return (
     <div>
-      <div className="row mb-2">
+      <div className="row mb-2 border-bottom">
         <div className="col-lg-2">
           <div className="card-img-left">
             <img src={props.image} alt={props.title} />
@@ -26,7 +26,6 @@ function ArticleCard(props) {
           </div>
         </div>
       </div>
-      <hr/>
     </div>
   );
 }

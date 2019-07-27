@@ -28,8 +28,7 @@ class App extends Component {
             render={props => <Home auth={this.auth} {...props} />}
           />
           <Route
-            exact
-            path="/"
+            path="/callback"
             render={props => <Callback auth={this.auth} {...props} />}
           />
           <Route exact path="/resources" component={Resources} />

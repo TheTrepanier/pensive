@@ -2,10 +2,9 @@ import React from "react";
 import logo from "./logo.png";
 import "./style.css";
 import { NavLink } from "react-router-dom";
-import { useAuth0 } from "../../react-auth0-wrapper";
 
 const NavBar = () => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  
   return (
     <header className="navbar-list">
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -36,7 +35,9 @@ const NavBar = () => {
                 Resources
               </NavLink>
             </li>
-            {isAuthenticated && (
+            </ul>
+            </div>
+            {/* {isAuthenticated && (
               <li className="nav-item">
                 <NavLink to="/profile" className="nav-link">
                   Profile
@@ -60,7 +61,7 @@ const NavBar = () => {
               Log out
             </button>
           )}
-        </div>
+        </div> */}
       </nav>
     </header>
   );

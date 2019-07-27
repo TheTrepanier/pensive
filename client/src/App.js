@@ -4,26 +4,39 @@ import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import User from "./pages/Users/Users";
+import Callback from "./pages/Callback/Callback";
 import Resources from "./pages/Resources/Resources";
 import Topics from "./pages/Topics/Topics";
 import PrivateRoute from "./components/Auth/PrivateRoute";
+import Auth from "./Auth/Auth";
+
+console.log(process.env.REACT_APP_AUTH0_DOMAIN)
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.auth = new Auth(this.props.history);
+  }
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/resources" component={Resources} />
-            <Route exact path="/resources/:topic" component={Topics}/>
-            {/* <Route exact path="/topics" component={Topics} /> */}
-            <PrivateRoute exact path="/profile" component={User} />
-          </Switch>
-          <Footer />
-        </div>
-      </Router>
+      <>
+        <Navbar />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={props => <Home auth={this.auth} {...props} />}
+          />
+          <Route
+            path="/callback"
+            render={props => <Callback auth={this.auth} {...props} />}
+          />
+          <Route exact path="/resources" component={Resources} />
+          <Route exact path="/resources/:topic" component={Topics} />
+          <PrivateRoute exact path="/profile" component={User} />
+        </Switch>
+        <Footer />
+      </>
     );
   }
 }

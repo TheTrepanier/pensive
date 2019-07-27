@@ -14,7 +14,7 @@ const PostSchema = new Schema({
   postBody: {
     type: String,
     required: true,
-    maxlength: 3
+    minlength: 3
   },
   author: {
       type: String,

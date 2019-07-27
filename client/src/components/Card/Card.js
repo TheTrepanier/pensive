@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 
+
 function Card(props) {
   return (
     <div className="row">
@@ -11,7 +12,8 @@ function Card(props) {
         </div>
       </div>
     </div>
-  );
+    );
+  }
 }
 
 export default Card;

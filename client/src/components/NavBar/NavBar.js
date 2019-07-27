@@ -35,15 +35,11 @@ const NavBar = () => {
                 Resources
               </NavLink>
             </li>
-            </ul>
-            </div>
-            {/* {isAuthenticated && (
-              <li className="nav-item">
-                <NavLink to="/profile" className="nav-link">
-                  Profile
-                </NavLink>
-              </li>
-            )}
+            <li className="nav-item">
+              <NavLink to="/profile" className="nav-link">
+                Profile
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div className="auth0-buttons">

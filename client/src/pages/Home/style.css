@@ -4,7 +4,7 @@
   font-size: 24px;
   text-align: center;
   width: 100%; /* divider width */
-  margin: 40px auto; /* spacing above/below */
+  margin: 30px auto; /* spacing above/below */
 }
 .divider span {
   display: table-cell;
@@ -40,4 +40,9 @@
 }
 .container {
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+
+#rowling-quote {
+  border: 2px solid #6c27f4;
+  padding: 5px;
 }

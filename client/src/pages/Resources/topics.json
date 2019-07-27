@@ -2,31 +2,37 @@
   {
     "id": 1,
     "topic": "Sleep",
-    "image": "https://miro.medium.com/max/1838/1*3ixaLgKex0stVjkEJwXzfA.jpeg"
+    "image": "https://miro.medium.com/max/1838/1*3ixaLgKex0stVjkEJwXzfA.jpeg",
+    "toLink": "/resources/sleep"
   },
   {
     "id": 2,
     "topic": "Stress Management",
-    "image": "https://cdn.pixabay.com/photo/2017/03/26/21/54/yoga-2176668_960_720.jpg"
+    "image": "https://cdn.pixabay.com/photo/2017/03/26/21/54/yoga-2176668_960_720.jpg",
+    "toLink": "/resources/stress-management"
   },
   {
     "id": 3,
-    "topic": "Exercise",
-    "image": "https://cdn.pixabay.com/photo/2017/08/06/12/52/people-2592247_960_720.jpg"
+    "topic": "Self Concept",
+    "image": "https://cdn.pixabay.com/photo/2017/08/06/12/52/people-2592247_960_720.jpg",
+    "toLink": "/resources/self-concept"
   },
   {
     "id": 4,
     "topic": "Emotional Intelligence",
-    "image": "https://cdn.pixabay.com/photo/2014/06/18/13/24/seaside-371229_960_720.jpg"
+    "image": "https://cdn.pixabay.com/photo/2014/06/18/13/24/seaside-371229_960_720.jpg",
+    "toLink": "/resources/emotional-intelligence"
   },
   {
     "id": 5,
     "topic": "Habits",
-    "image": "https://cdn.shopify.com/s/files/1/0696/2897/files/Fotolia_96795309_Subscription_Monthly_M_2048x2048.jpg?v=1509057394"
+    "image": "https://cdn.shopify.com/s/files/1/0696/2897/files/Fotolia_96795309_Subscription_Monthly_M_2048x2048.jpg?v=1509057394",
+    "toLink": "/resources/habits"
   },
   {
     "id": 6,
     "topic": "Diet",
-    "image": "https://bestproductlists.com/wp-content/uploads/2019/04/diet.jpg"
+    "image": "https://bestproductlists.com/wp-content/uploads/2019/04/diet.jpg",
+    "toLink": "/resources/diet"
   }
 ]

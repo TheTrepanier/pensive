@@ -21,14 +21,15 @@ class Home extends Component {
               <hr className="my-4" />
               <h5>Pensive is the #1 App for Mental Health and Well Being!</h5>
               <br />
-              <a
+              <button
                 className="btn btn-dark btn-lg"
                 href="#"
                 id="start-journey"
                 role="button"
+                onClick={this.props.auth.login}
               >
                 Start My Journey
-              </a>
+              </button>
             </header>
           </div>
         </Jumbotron>

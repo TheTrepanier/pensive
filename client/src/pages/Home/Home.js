@@ -16,14 +16,10 @@ class Home extends Component {
             <br />
             <header>
               <br />
-              <h1>
-                “I sometimes find, and I am sure you know the feeling, that I
-                simply have too many thoughts and memories crammed into my
-                mind."
-              </h1>
-              <h3>J.K.Rowling</h3>
+              <h1>Conquer Negativity, Stess, Anxiety and Doubt</h1>
+              <h3 />
               <hr className="my-4" />
-              <h5 />
+              <h5>Pensive is the #1 App for Mental Health and Well Being!</h5>
               <br />
               <a
                 className="btn btn-dark btn-lg"
@@ -44,12 +40,24 @@ class Home extends Component {
             </span>
             <span />
           </div>
-          <h5>
-            It's easy to get overloaded with memories and thoughts of our past.
-            That's when you need to relax, take a deep breath, and empty some of
-            them out into Pensive... that is, if you have one. Otherwise, a vent
-            session to a good friend can do the same.
-          </h5>
+          <h4>
+            Welcome to Pensive! It's easy to get overloaded with memories and
+            thoughts of our past. That's when you need to relax, take a deep
+            breath, and empty some of them out into Pensive... that is, if you
+            have one. Otherwise, a vent session to a good friend can do the
+            same.
+          </h4>
+          <br />
+          <br />
+          <Row>
+            <div className="col-lg-4" />
+            <h5 className="col-lg-4" id="rowling-quote">
+              “I sometimes find, and I am sure you know the feeling, that I
+              simply have too many thoughts and memories crammed into my mind."
+              <p>-J.K. Rowling</p>
+            </h5>
+            <div className="col-lg-4" />
+          </Row>
         </div>
         <div className="container text-center mt-5">
           <div className="row">

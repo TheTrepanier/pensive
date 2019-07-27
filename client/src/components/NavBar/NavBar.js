@@ -24,15 +24,9 @@ const NavBar = () => {
           <span className="navbar-toggler-icon" />
         </button>
 
-<<<<<<< Updated upstream
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item active">
-=======
         <div className="navbar-collapse collapse" id="navbarNav">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
->>>>>>> Stashed changes
               <NavLink to="/" className="nav-link">
                 Home <span className="sr-only">(current)</span>
               </NavLink>
@@ -42,13 +36,11 @@ const NavBar = () => {
                 Resources
               </NavLink>
             </li>
-            {isAuthenticated && (
-              <li className="nav-item">
-                <NavLink to="/profile" className="nav-link">
-                  Profile
-                </NavLink>
-              </li>
-            )}
+            <li className="nav-item">
+              <NavLink to="/profile" className="nav-link">
+                Profile
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div className="auth0-buttons">

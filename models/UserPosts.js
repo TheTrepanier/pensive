@@ -17,8 +17,8 @@ const PostSchema = new Schema({
     minlength: 3
   },
   author: {
-      type: String,
-      required: true
+    type: String,
+    required: true
   },
   isPublic: {
     type: Boolean,

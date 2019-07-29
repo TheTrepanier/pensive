@@ -5,7 +5,10 @@ const postController = require("../../controllers/postController");
 router.route("/")
     .get(postController.findAllPosts)
     .post(postController.create);
-
+    
+router.route("/user")
+    .post(postController.findPostByUser);
+    
 router.route("/:id")
     .delete(postController.remove);
 

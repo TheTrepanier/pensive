@@ -14,16 +14,20 @@ const PostSchema = new Schema({
   postBody: {
     type: String,
     required: true,
-    maxlength: 3
+    minlength: 3
   },
   author: {
-      type: String,
-      required: true
+    type: String,
+    required: true
   },
   isPublic: {
     type: Boolean,
     required: true,
     default: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
   }
 });
 

@@ -91,7 +91,6 @@ class InfiniteScroller extends Component {
                         <ArticleCard image={card.image} title={card.title} teaser={card.teaser} link={card.link} />
                     </Fragment>
                 )}
-                {/* <hr /> */}
                 {error &&
                     <div style={{ color: "#900" }}>
                         {error}

@@ -7,6 +7,14 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
+    findPostByUser: function (req, res) {
+        console.log(req.body, " ");
+        
+        db.UserPosts
+            .find({author: req.body.userName})
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
     create: function (req, res) {
         db.UserPosts
             .create(req.body)

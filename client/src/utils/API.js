@@ -10,6 +10,15 @@ export default {
       }
     });
   },
+  getPostsByUser: function(userName) {
+    // console.log(userName);
+
+    return axios.post("/api/posts/user", userName, {
+      headers: {
+        Authorization: `Bearer ${auth0Client.getIdToken()}`
+      }
+    });
+  },
   makePost: function(postData) {
     return axios.post("/api/posts", postData, {
       headers: {

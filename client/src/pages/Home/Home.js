@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid/index";
+import { withRouter } from "react-router-dom";
 import UserReviewCard from "../../components/UserReviewCard/UserReviewCard";
 import "./style.css";
+import auth0Client from "../../Auth/Auth";
 
 class Home extends Component {
   render() {
@@ -25,7 +27,7 @@ class Home extends Component {
                 className="btn btn-dark btn-lg"
                 id="start-journey"
                 role="button"
-                onClick={this.props.auth.login}
+                onClick={auth0Client.signIn}
               >
                 Start My Journey
               </button>
@@ -77,4 +79,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);

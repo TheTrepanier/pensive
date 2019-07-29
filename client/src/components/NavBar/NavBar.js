@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import logo from "./logo.png";
 import "./style.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
+import auth0Client from "../../Auth/Auth";
 
 class NavBar extends Component {
-  
   render() {
-    const { isAuthenticated, login, logout} = this.props.auth;
+    const signOut = () => {
+      auth0Client.signOut();
+      this.props.history.replace("/");
+    };
     return (
       <header className="navbar-list">
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -37,12 +40,34 @@ class NavBar extends Component {
                   Resources
                 </NavLink>
               </li>
+              {auth0Client.isAuthenticated() && (
+                <li>
+                  <NavLink to="/profile" className="nav-link">
+                    Profile
+                  </NavLink>
+                </li>
+              )}
             </ul>
           </div>
           <div>
-            <button className="btn btn-dark auth0-button" onClick={isAuthenticated() ? logout : login}>
-              {isAuthenticated() ? "logout" : "login"}
-            </button>
+            {!auth0Client.isAuthenticated() && (
+              <button
+                className="btn btn-dark auth0-buttons"
+                onClick={auth0Client.signIn}
+              >
+                Sign In
+              </button>
+            )}
+            {auth0Client.isAuthenticated() && (
+              <button
+                className="btn btn-dark auth0-buttons"
+                onClick={() => {
+                  signOut();
+                }}
+              >
+                Sign Out
+              </button>
+            )}
           </div>
         </nav>
       </header>
@@ -50,4 +75,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

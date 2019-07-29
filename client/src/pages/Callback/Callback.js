@@ -1,17 +1,19 @@
 import React, { Component } from "react";
+import {withRouter} from 'react-router-dom';
+import auth0Client from '../../Auth/Auth';
 
 class Callback extends Component {
-  componentDidMount = () => {
-    // Handle authentication if expected values are in the URL.
-    if (/access_token|id_token|error/.test(this.props.location.hash)) {
-      this.props.auth.handleAuthentication();
-    } else {
-      throw new Error("Invalid callback URL.");
-    }
-  };
+  async componentDidMount() {
+    await auth0Client.handleAuthentication();
+    console.log(auth0Client.getProfile());
+    this.props.history.replace('/');
+  }
+
   render() {
-    return <h1>Loading...</h1>;
+    return (
+      <p>Loading profile...</p>
+    );
   }
 }
 
-export default Callback;
+export default withRouter(Callback);

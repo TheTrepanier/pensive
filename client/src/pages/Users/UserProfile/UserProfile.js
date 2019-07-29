@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "./style.css";
+import { withRouter } from "react-router-dom"
 import ProfileSideBar from "../../../components/ProfileSideBar/ProfileSideBar";
 import PostHistoryCard from "../../../components/PostHistoryCard/PostHistoryCard";
+import auth0Client from "../../../Auth/Auth"
 
 class PostHistory extends Component {
   render() {
@@ -10,7 +12,7 @@ class PostHistory extends Component {
         <div className="container mt-5">
           <div className="row">
             <div className="col-lg-12">
-              <h1 className="text-center">Welcome Aaron!</h1>
+              <h1 className="text-center">Welcome {auth0Client.getProfile().given_name}!</h1>
             </div>
           </div>
           <div className="row profile">
@@ -34,4 +36,4 @@ class PostHistory extends Component {
   }
 }
 
-export default PostHistory;
+export default withRouter(PostHistory);

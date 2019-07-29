@@ -1,5 +1,8 @@
 const router = require("express").Router();
 const postController = require("../../controllers/postController");
+const checkJwt = require("../../jwtMiddleware");
+
+router.use(checkJwt);
 
 // Matches with "/api/posts"
 router.route("/")

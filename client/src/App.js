@@ -7,34 +7,22 @@ import Callback from "./pages/Callback/Callback";
 import Resources from "./pages/Resources/Resources";
 import Topics from "./pages/Topics/Topics";
 import UserProfile from "./pages/Users/UserProfile/UserProfile";
-// import PrivateRoute from "./components/Auth/PrivateRoute";
+import SecuredRoute from "./SecuredRoute";
 import UserPost from "./pages/Users/UserPost";
-import Auth from "./Auth/Auth";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.auth = new Auth(this.props.history);
-  }
   render() {
     return (
       <>
         <div className="App">
-          <Navbar  auth={this.auth}/>
+          <Navbar />
           <Switch>
-            <Route
-              exact
-              path="/"
-              render={props => <Home auth={this.auth} {...props} />}
-            />
-            <Route
-              path="/callback"
-              render={props => <Callback auth={this.auth} {...props} />}
-            />
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/callback" component={Callback} />
             <Route exact path="/resources" component={Resources} />
             <Route exact path="/resources/:topic" component={Topics} />
-            <Route exact path="/profile" component={UserProfile} />
-            <Route path="/profile/posts" component={UserPost} />
+            <SecuredRoute exact path="/profile" component={UserProfile} />
+            <SecuredRoute path="/profile/posts" component={UserPost} />
           </Switch>
           <Footer />
         </div>

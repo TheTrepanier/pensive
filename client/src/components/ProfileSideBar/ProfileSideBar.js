@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-// import { useAuth0 } from "../../react-auth0-wrapper";
+import { Link, withRouter } from "react-router-dom";
 import "./style.css";
+import auth0Client from "../../Auth/Auth"
 
 const ProfileSideBar = () => {
   // const { user } = useAuth0();
@@ -9,7 +9,7 @@ const ProfileSideBar = () => {
     <div>
       <div className="profile-sidebar">
         <div className="profile-userpic text-center">
-          <img src="{user.picture}" className="img-responsive" alt="" />
+          <img src={auth0Client.getProfile().picture} className="img-responsive" alt="" />
         </div>
         <div className="profile-usertitle">
           <div className="profile-usertitle-name">""</div>
@@ -56,4 +56,4 @@ const ProfileSideBar = () => {
   );
 };
 
-export default ProfileSideBar;
+export default withRouter(ProfileSideBar);

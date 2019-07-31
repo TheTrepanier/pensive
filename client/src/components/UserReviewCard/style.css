@@ -1,6 +1,6 @@
 #user-review img {
-  width: 50%;
-  border-radius: 50%;
+  width: 35%;
+  border-radius: 40%;
   margin: 0 auto;
   display: block;
   margin-top: 10px;
@@ -11,10 +11,11 @@ img {
   display: block;
 }
 
-.card-userreview {
-  border-radius: 2px;
-  margin: 1rem;
+#user-review {
+  margin: 5px;
+  width: 100%;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   color: black;
   display: block;
+  text-align: center;
 }

@@ -1,0 +1,11 @@
+#jumbotron-topics {
+  background-image: url(https://cdn.pixabay.com/photo/2015/02/28/11/47/forest-653448_960_720.jpg);
+  opacity: 0.8;
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

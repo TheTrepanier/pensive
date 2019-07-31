@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import InfiniteScroller from "../../components/InfiniteScroller/InfiniteScroller";
+import "./style.css";
 
 class Topics extends Component {
   state = {
-    topic: "",
+    topic: ""
   };
 
   componentDidMount() {
-    this.topicTitle()
+    this.topicTitle();
   }
 
   topicTitle = () => {
@@ -34,12 +35,12 @@ class Topics extends Component {
         this.setState({ topic: "Error" });
         break;
     }
-  }
+  };
 
   render() {
     return (
       <div>
-        <div className="jumbotron-topics">
+        <div className="jumbotron" id="jumbotron-topics">
           <h1 className="resources">{this.state.topic}</h1>
         </div>
         <div className="container mt-5">

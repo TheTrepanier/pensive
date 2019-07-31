@@ -28,7 +28,7 @@ class UserPost extends Component {
       API.makePost({
         postTitle: this.state.title,
         postBody: this.state.postBody,
-        author: "Tim Apple",
+        //author: "Tim Apple",
       })
         .then(res => alert("Posted!"))
         .catch(err => console.error(err));

@@ -5,11 +5,30 @@ import { NavLink, withRouter } from "react-router-dom";
 import auth0Client from "../../Auth/Auth";
 
 class NavBar extends Component {
+  constructor(props) {
+    super(props);
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.state = {
+      collapsed: true
+    };
+  }
+  toggleNavbar() {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  }
   render() {
     const signOut = () => {
       auth0Client.signOut();
       this.props.history.replace("/");
     };
+    const collapsed = this.state.collapsed;
+    const classOne = collapsed
+      ? "collapse navbar-collapse"
+      : "collapse navbar-collapse show";
+    const classTwo = collapsed
+      ? "navbar-toggler navbar-toggler-right collapsed"
+      : "navbar-toggler navbar-toggler-right";
     return (
       <header className="navbar-list">
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -17,18 +36,18 @@ class NavBar extends Component {
             <img id="logo" src={logo} alt={logo} />
           </NavLink>
           <button
-            className="navbar-toggler"
+            onClick={this.toggleNavbar}
+            className={`${classTwo}`}
             type="button"
             data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
+            data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon" />
           </button>
-
-          <div className="navbar-collapse collapse" id="navbarNav">
+          <div className={`${classOne}`} id="navbarResponsive">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <NavLink to="/" className="nav-link">

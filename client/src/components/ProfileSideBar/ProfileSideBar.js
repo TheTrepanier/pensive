@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./style.css";
-import auth0Client from "../../Auth/Auth"
+import auth0Client from "../../Auth/Auth";
 
 const ProfileSideBar = () => {
   // const { user } = useAuth0();
@@ -9,10 +9,16 @@ const ProfileSideBar = () => {
     <div>
       <div className="profile-sidebar">
         <div className="profile-userpic text-center">
-          <img src={auth0Client.getProfile().picture} className="img-responsive" alt="" />
+          <img
+            src={auth0Client.getProfile().picture}
+            className="img-responsive"
+            alt=""
+          />
         </div>
         <div className="profile-usertitle">
-          <div className="profile-usertitle-name">""</div>
+          <div className="profile-usertitle-name">
+            {auth0Client.getProfile().name}
+          </div>
           <div className="profile-usertitle-job">Developer</div>
         </div>
         <div className="profile-userbuttons">
@@ -41,12 +47,6 @@ const ProfileSideBar = () => {
               <Link to="/resources" className="nav-link">
                 <i className="fa fa-book" />
                 Resources{" "}
-              </Link>
-            </li>
-            <li className="profile-list">
-              <Link to="/profile/tasks" className="nav-link">
-                <i className="fa fa-check" />
-                Create New Task{" "}
               </Link>
             </li>
           </ul>

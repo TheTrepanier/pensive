@@ -1,17 +1,13 @@
 import React, { Component } from "react";
 import "./style.css";
 
-function UserReviewCard() {
+function UserReviewCard(props) {
   return (
     <div className="row">
       <div className="card" id="user-review">
-        <img
-          src="https://www.w3schools.com/howto/img_avatar.png"
-          className="text-center"
-          alt="avatar"
-        />
+        <img src={props.image} className="text-center" alt={props.name} />
         <div className="card-body">
-          <h5 className="card-title">Danyal</h5>
+          <h5 className="card-title">{props.name}</h5>
           <hr />
           <span class="heading">User Rating</span>
           <div class="review-block-rate">

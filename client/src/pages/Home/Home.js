@@ -4,9 +4,14 @@ import { Col, Row, Container } from "../../components/Grid/index";
 import { withRouter } from "react-router-dom";
 import UserReviewCard from "../../components/UserReviewCard/UserReviewCard";
 import "./style.css";
+import UserReviewWrapper from "../../components/UserReviewWrapper/UserReviewWrapper";
+import reviews from "./reviews.json";
 import auth0Client from "../../Auth/Auth";
 
 class Home extends Component {
+  state = {
+    reviews
+  };
   render() {
     return (
       <div className="App">
@@ -63,15 +68,19 @@ class Home extends Component {
         </div>
         <div className="container text-center mt-5">
           <div className="row">
-            <div className="col-lg-4">
-              <UserReviewCard />
-            </div>
-            <div className="col-lg-4">
-              <UserReviewCard />
-            </div>
-            <div className="col-lg-4">
-              <UserReviewCard />
-            </div>
+            <UserReviewWrapper>
+              <Row>
+                {this.state.reviews.map(reviews => (
+                  <div className="col-lg-4">
+                    <UserReviewCard
+                      id={reviews.id}
+                      name={reviews.name}
+                      image={reviews.image}
+                    />
+                  </div>
+                ))}
+              </Row>
+            </UserReviewWrapper>
           </div>
         </div>
       </div>

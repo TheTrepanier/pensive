@@ -1,4 +1,4 @@
-import auth0 from 'auth0-js';
+import auth0 from "auth0-js";
 
 class Auth {
   constructor() {
@@ -8,8 +8,8 @@ class Auth {
       audience: `https://${process.env.REACT_APP_AUTH0_DOMAIN}/userinfo`,
       clientID: process.env.REACT_APP_AUTH0_CLIENT_ID,
       redirectUri: process.env.REACT_APP_AUTH0_CALLBACK_URL,
-      responseType: 'id_token',
-      scope: 'openid profile'
+      responseType: "id_token",
+      scope: "openid profile"
     });
 
     this.getProfile = this.getProfile.bind(this);
@@ -42,20 +42,34 @@ class Auth {
         if (!authResult || !authResult.idToken) {
           return reject(err);
         }
-        this.idToken = authResult.idToken;
-        this.profile = authResult.idTokenPayload;
-        // set the time that the id token will expire at
-        this.expiresAt = authResult.idTokenPayload.exp * 1000;
+        this.setSession(authResult);
         resolve();
       });
-    })
+    });
+  }
+
+  setSession(authResult) {
+    this.idToken = authResult.idToken;
+    this.profile = authResult.idTokenPayload;
+    // set the time that the id token will expire at
+    this.expiresAt = authResult.idTokenPayload.exp * 1000;
   }
 
   signOut() {
-    // clear id token, profile, and expiration
-    this.idToken = null;
-    this.profile = null;
-    this.expiresAt = null;
+    this.auth0.logout({
+      returnTo: process.env.REACT_APP_AUTH0_LOGOUT_URL,
+      clientID: process.env.REACT_APP_AUTH0_CLIENT_ID
+    });
+  }
+
+  silentAuth() {
+    return new Promise((resolve, reject) => {
+      this.auth0.checkSession({}, (err, authResult) => {
+        if (err) return reject(err);
+        this.setSession(authResult);
+        resolve();
+      });
+    });
   }
 }
 
